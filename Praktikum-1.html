@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Rotate & Flip</title>
+</head>
+<body>
+    <h3>Gambar 1</h3>
+    <canvas id="gambar" width="300" height="300" style="border:1px solid #000;"></canvas><br><br>
+    
+    <input type="file" id="file1" accept=".jpg, .jpeg, .png, .bmp"><br><br>
+    
+    <!-- Tombol Modul Dasar -->
+    <button onclick="rotate90('gambar')">Rotate 90°</button>
+    <button onclick="flipHorizontal('gambar')">Flip Horizontal</button>
+    
+    <!-- Tombol Tambahan Task 1 -->
+    <button onclick="rotate180('gambar')">Rotate 180°</button>
+    <button onclick="rotate270('gambar')">Rotate 270°</button>
+    <button onclick="flipVertical('gambar')">Flip Vertical</button>
+    
+    <button onclick="saveImage('gambar')">Save</button>
+
+    <script>
+        // Load image ke canvas
+        function loadImage(fileInput, canvasId) {
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext("2d");
+            const img = new Image();
+
+            img.onload = function () {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = URL.createObjectURL(file);
+        }
+
+        // Rotasi 90 Derajat Searah Jarum Jam
+        function rotate90(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext("2d");
+            const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const newCanvas = document.createElement("canvas");
+            newCanvas.width = height;
+            newCanvas.height = width;
+            const newCtx = newCanvas.getContext("2d");
+            const newImgData = newCtx.createImageData(height, width);
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const srcIndex = (y * width + x) * 4;
+                    const nx = height - 1 - y;
+                    const ny = x;
+                    const dstIndex = (ny * height + nx) * 4;
+
+                    newImgData.data[dstIndex] = imgData.data[srcIndex];
+                    newImgData.data[dstIndex + 1] = imgData.data[srcIndex + 1];
+                    newImgData.data[dstIndex + 2] = imgData.data[srcIndex + 2];
+                    newImgData.data[dstIndex + 3] = imgData.data[srcIndex + 3];
+                }
+            }
+            canvas.width = newCanvas.width;
+            canvas.height = newCanvas.height;
+            ctx.putImageData(newImgData, 0, 0);
+        }
+
+        // Task 1: Rotasi 180 Derajat
+        function rotate180(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext("2d");
+            const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const newImgData = ctx.createImageData(width, height);
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const srcIndex = (y * width + x) * 4;
+                    const nx = width - 1 - x;
+                    const ny = height - 1 - y;
+                    const dstIndex = (ny * width + nx) * 4;
+
+                    newImgData.data[dstIndex] = imgData.data[srcIndex];
+                    newImgData.data[dstIndex + 1] = imgData.data[srcIndex + 1];
+                    newImgData.data[dstIndex + 2] = imgData.data[srcIndex + 2];
+                    newImgData.data[dstIndex + 3] = imgData.data[srcIndex + 3];
+                }
+            }
+            ctx.putImageData(newImgData, 0, 0);
+        }
+
+        // Task 1: Rotasi 270 Derajat Searah Jarum Jam (atau 90° berlawanan arah jarum jam)
+        function rotate270(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext("2d");
+            const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const newCanvas = document.createElement("canvas");
+            newCanvas.width = height;
+            newCanvas.height = width;
+            const newCtx = newCanvas.getContext("2d");
+            const newImgData = newCtx.createImageData(height, width);
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const srcIndex = (y * width + x) * 4;
+                    const nx = y;
+                    const ny = width - 1 - x;
+                    const dstIndex = (ny * height + nx) * 4;
+
+                    newImgData.data[dstIndex] = imgData.data[srcIndex];
+                    newImgData.data[dstIndex + 1] = imgData.data[srcIndex + 1];
+                    newImgData.data[dstIndex + 2] = imgData.data[srcIndex + 2];
+                    newImgData.data[dstIndex + 3] = imgData.data[srcIndex + 3];
+                }
+            }
+            canvas.width = newCanvas.width;
+            canvas.height = newCanvas.height;
+            ctx.putImageData(newImgData, 0, 0);
+        }
+
+        // Flip Horizontal
+        function flipHorizontal(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext("2d");
+            const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const newImgData = ctx.createImageData(width, height);
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const srcIndex = (y * width + x) * 4;
+                    const nx = width - 1 - x;
+                    const ny = y;
+                    const dstIndex = (ny * width + nx) * 4;
+
+                    newImgData.data[dstIndex] = imgData.data[srcIndex];
+                    newImgData.data[dstIndex + 1] = imgData.data[srcIndex + 1];
+                    newImgData.data[dstIndex + 2] = imgData.data[srcIndex + 2];
+                    newImgData.data[dstIndex + 3] = imgData.data[srcIndex + 3];
+                }
+            }
+            ctx.putImageData(newImgData, 0, 0);
+        }
+
+        // Task 1: Flip Vertikal
+        function flipVertical(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext("2d");
+            const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const newImgData = ctx.createImageData(width, height);
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const srcIndex = (y * width + x) * 4;
+                    const nx = x;
+                    const ny = height - 1 - y;
+                    const dstIndex = (ny * width + nx) * 4;
+
+                    newImgData.data[dstIndex] = imgData.data[srcIndex];
+                    newImgData.data[dstIndex + 1] = imgData.data[srcIndex + 1];
+                    newImgData.data[dstIndex + 2] = imgData.data[srcIndex + 2];
+                    newImgData.data[dstIndex + 3] = imgData.data[srcIndex + 3];
+                }
+            }
+            ctx.putImageData(newImgData, 0, 0);
+        }
+
+        // Save canvas sebagai citra PNG
+        function saveImage(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement("a");
+            link.download = canvasId + ".png";
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Event listener upload file
+        document.getElementById("file1").addEventListener("change", function () {
+            loadImage(this, "gambar");
+        });
+    </script>
+</body>
+</html>
