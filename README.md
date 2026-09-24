@@ -3,36 +3,36 @@
 Kumpulan arsip Laporan Praktikum (Laprak) mata kuliah **Pengolahan Citra Digital** Kelas IF-B-SG, Semester 5.
 
 ### 📂 Isi Repositori
-- **Materi:** Slide PPT tiap pertemuan
-- **Source Code:** Implementasi (diawali HTML Canvas, lanjut ke Python/OpenCV/MATLAB)
-- **Laporan:** Laprak PDF tiap modul
+  - **Materi:** Slide PPT tiap pertemuan
+  - **Source Code:** Implementasi (diawali HTML Canvas, lanjut ke Python/OpenCV/MATLAB)
+  - **Laporan:** Laprak PDF tiap modul
 
 ### 🧪 Outline Praktikum (Sesuai LMS)
 
-- [x]**Pertemuan 1 - Pengenalan**
-- Definisi citra digital dan pengolahan citra
-- Proses & Aplikasi pengolahan citra digital
-- *Praktik: Dasar HTML Canvas*
+- [x] **Pertemuan 1 - Pengenalan**
+  - Definisi citra digital dan pengolahan citra
+  - Proses & Aplikasi pengolahan citra digital
+  - *Praktik: Dasar HTML Canvas*
 
-- [ ]**Pertemuan 2 - Representasi Citra Digital**
-- Sistem Warna (RGB, HSV, Grayscale)
+- [ ] **Pertemuan 2 - Representasi Citra Digital**
+  - Sistem Warna (RGB, HSV, Grayscale)
 
-- [ ]**Pertemuan 3 - Representasi Citra Digital**
-- Resolusi citra, Histogram citra, Transformasi ruang warna
+- [ ] **Pertemuan 3 - Representasi Citra Digital**
+  - Resolusi citra, Histogram citra, Transformasi ruang warna
 
-- [ ]**Pertemuan 4 - Dasar Transformasi Citra**
-- Transformasi Fourier
+- [ ] **Pertemuan 4 - Dasar Transformasi Citra**
+  - Transformasi Fourier
 
-- [ ]**Pertemuan 5 - Dasar Transformasi Citra**
-- Transformasi Kosinus Diskrit (DCT) & Transformasi Wavelet
+- [ ] **Pertemuan 5 - Dasar Transformasi Citra**
+  - Transformasi Kosinus Diskrit (DCT) & Transformasi Wavelet
 
-- [ ]**Pertemuan 6 - Peningkatan Citra (Enhancement)**
-- Histogram Equalization & Konvolusi
+- [ ] **Pertemuan 6 - Peningkatan Citra (Enhancement)**
+  - Histogram Equalization & Konvolusi
 
-- [ ]**Pertemuan 7 - Peningkatan Citra (Enhancement)**
-- Linear Filtering & Non-linear Filtering
+- [ ] **Pertemuan 7 - Peningkatan Citra (Enhancement)**
+  - Linear Filtering & Non-linear Filtering
 
-- [ ]**Pertemuan 8 - UTS**
+- [ ] **Pertemuan 8 - UTS**
 
 ### 🛠️ Tech Stack
 `HTML5 Canvas` `JavaScript` `Python` `OpenCV` `NumPy` `Matplotlib`
