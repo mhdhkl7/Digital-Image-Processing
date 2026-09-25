@@ -14,7 +14,7 @@ Kumpulan arsip Laporan Praktikum (Laprak) mata kuliah **Pengolahan Citra Digital
   - Proses & Aplikasi pengolahan citra digital
   - *Praktik: Dasar HTML Canvas*
 
-- [ ] **Pertemuan 2 - Representasi Citra Digital**
+- [x] **Pertemuan 2 - Representasi Citra Digital**
   - Sistem Warna (RGB, HSV, Grayscale)
 
 - [ ] **Pertemuan 3 - Representasi Citra Digital**
