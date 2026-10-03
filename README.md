@@ -17,7 +17,7 @@ Kumpulan arsip Laporan Praktikum (Laprak) mata kuliah **Pengolahan Citra Digital
 - [x] **Pertemuan 2 - Representasi Citra Digital**
   - Sistem Warna (RGB, HSV, Grayscale)
 
-- [ ] **Pertemuan 3 - Representasi Citra Digital**
+- [x] **Pertemuan 3 - Representasi Citra Digital**
   - Resolusi citra, Histogram citra, Transformasi ruang warna
 
 - [ ] **Pertemuan 4 - Dasar Transformasi Citra**
