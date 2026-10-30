@@ -20,16 +20,16 @@ Kumpulan arsip Laporan Praktikum (Laprak) mata kuliah **Pengolahan Citra Digital
 - [x] **Pertemuan 3 - Representasi Citra Digital**
   - Resolusi citra, Histogram citra, Transformasi ruang warna
 
-- [ ] **Pertemuan 4 - Dasar Transformasi Citra**
+- [x] **Pertemuan 4 - Dasar Transformasi Citra**
   - Transformasi Fourier
 
-- [ ] **Pertemuan 5 - Dasar Transformasi Citra**
+- [x] **Pertemuan 5 - Dasar Transformasi Citra**
   - Transformasi Kosinus Diskrit (DCT) & Transformasi Wavelet
 
-- [ ] **Pertemuan 6 - Peningkatan Citra (Enhancement)**
+- [x] **Pertemuan 6 - Peningkatan Citra (Enhancement)**
   - Histogram Equalization & Konvolusi
 
-- [ ] **Pertemuan 7 - Peningkatan Citra (Enhancement)**
+- [x] **Pertemuan 7 - Peningkatan Citra (Enhancement)**
   - Linear Filtering & Non-linear Filtering
 
 - [ ] **Pertemuan 8 - UTS**
